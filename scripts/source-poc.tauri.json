@@ -1,0 +1,11 @@
+{
+  "app": {
+    "windows": [{
+      "label": "main",
+      "title": "Drop Deck Source Compatibility POC",
+      "url": "http://127.0.0.1:1420/tests/source-compatibility.html",
+      "width": 1100,
+      "height": 850
+    }]
+  }
+}

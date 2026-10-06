@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Drop Deck",
+  "version": "0.1.0",
+  "identifier": "com.ytdj.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Drop Deck",
+        "width": 1200,
+        "height": 880,
+        "minWidth": 720,
+        "minHeight": 640
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com; connect-src ipc: http://ipc.localhost https://api.audius.co; media-src 'self' https:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/icon.png", "icons/icon.ico"],
+    "resources": {
+      "resources/yt-dlp.exe": "tools/yt-dlp.exe",
+      "resources/yt-dlp-LICENSE.txt": "tools/yt-dlp-LICENSE.txt",
+      "resources/yt-dlp-THIRD_PARTY_LICENSES.txt": "tools/yt-dlp-THIRD_PARTY_LICENSES.txt",
+      "resources/yt-dlp-source.tar.gz": "tools/yt-dlp-source.tar.gz",
+      "resources/SHA2-256SUMS": "tools/SHA2-256SUMS"
+    },
+    "windows": {
+      "webviewInstallMode": {"type": "embedBootstrapper", "silent": true},
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["TradChinese", "English"],
+        "displayLanguageSelector": true,
+        "startMenuFolder": "Drop Deck"
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

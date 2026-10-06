@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>Drop Deck Source Compatibility POC</title>
+<style>body{font:16px system-ui;margin:24px;background:#eef0f6;color:#1d2033}button{font:inherit;padding:12px;margin:6px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style></head>
+<body><h1>Milestone 3.5 · 原生來源相容性驗證</h1>
+<p>使用正式 DeckEngine / WebAudioSession。訊號量測僅用於測試，聽感需由使用者確認。</p>
+<p>先載入來源，再執行檢查（會播放並卸載）；重新載入後執行聽感測試。Audius 換曲測試會選另一首搜尋結果。完成後請複製下方結果回報。</p>
+<label>Audius 關鍵字 <input id="query" value="electronic" /></label><button id="search">搜尋 Audius</button>
+<select id="tracks" aria-label="Audius 曲目"></select><button id="audius" disabled>載入 Audius</button>
+<pre id="search-result">尚未搜尋 Audius</pre>
+<button id="local">載入本機控制音</button><button id="checks" disabled>執行播放與 Gain 檢查</button>
+<button id="listen" disabled>聽感：一般 → 較小 → 靜音</button><button id="unload">Unload</button><button id="dispose">關閉引擎與檢查清理</button>
+<pre id="status">idle</pre><pre id="result">尚未執行</pre>
+<script type="module" src="/tests/source-compatibility.ts"></script></body></html>
